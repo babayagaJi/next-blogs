@@ -6,7 +6,7 @@ function Dynamic({ num, posts }) {
         Dynamic Number - {num}
         <div className="all_blogs">
             {
-                posts.map(post => <SinglePost post={post} url="/blogs/"/>)
+                posts.map(post => <SinglePost key={post.id} post={post} url="/blogs/"/>)
             }
         </div>
     </div>
