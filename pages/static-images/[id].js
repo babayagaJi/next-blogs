@@ -19,13 +19,13 @@ export async function getStaticProps({ params: query }) {
 export const getStaticPaths = async () => {
     const res = await fetch('https://picsum.photos/v2/list')
     const images = await res.json()
-  
+
     // Get the paths we want to pre-render based on images
     const paths = images.map((image) => ({
-      params: { id: image.id.toString() },
+        params: { id: image.id.toString() },
     }))
     console.log(paths)
-  
+
     // We'll pre-render only these paths at build time.
     // { fallback: blocking } will server-render pages
     // on-demand if the path doesn't exist.
@@ -40,7 +40,7 @@ function Image(props) {
         return <div>Loading....</div>
     }
 
-    return  <SingleImage image={props.image} url="/static-images/" />
+    return <div className="single_image_wrapper"> <SingleImage image={props.image} url="/static-images/" /></div>
 }
 
 

@@ -15,11 +15,49 @@ a {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+// Nested Styling
+.image-container {
+  width: 100%;
+  height: 30vh;
+  position: relative;
+
+  .image {
+      width: 100%;
+      height: 100%;
+      position: relative !important;
+      object-fit: cover; // Optional
+  }
+}
+.single_image_wrapper{
+  .image-container {
+    height: 50vh;
+  }
+}
+
+// img{
+//   width: 100%;
+//   height: auto;
+// }
+
+
 .all_blogs {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
   gap: 1rem;
-  margin: 2rem 5rem;
 }
 
 div.single_blog {
@@ -35,8 +73,10 @@ div.single_blog {
   & > div {
     font-size: 0.85rem;
   }
-  .imagepost{
-    max-width: 100%;
+  
+
+  h4{
+    font-size: 1rem;
   }
 
   &:hover{
