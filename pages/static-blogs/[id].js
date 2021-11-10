@@ -17,7 +17,7 @@ export async function getStaticProps({ params: query }) {
 
 export const getStaticPaths = async () => {
     return {
-        paths: [{ params: { id: '1' } }, { params: { id: '2' } }, { params: { id: '3' } }],
+        paths: [],
         fallback: true
     }
 }
