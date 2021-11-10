@@ -31,7 +31,7 @@ function Blog(props) {
     console.log({ props, router });
 
     return <div>
-        <SinglePost key={post.id} post={props.post}/>
+        <SinglePost key={props.post.id} post={props.post}/>
     </div>
 }
 
